@@ -1,0 +1,21 @@
+<div class="card form-card">
+  <h2>Get User By ID</h2>
+
+  <label>User ID</label>
+  <input type="number" [(ngModel)]="id" placeholder="Enter user ID">
+
+  <button type="button" (click)="getUser()" [disabled]="isLoading()">
+    <span *ngIf="!isLoading()">Get User</span>
+    <span *ngIf="isLoading()">Processing...</span>
+  </button>
+
+  <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+
+  <div class="result-box" *ngIf="user() as currentUser">
+    <h3>User Details From Backend</h3>
+    <p><strong>ID:</strong> {{ currentUser.id }}</p>
+    <p><strong>Name:</strong> {{ currentUser.name }}</p>
+    <p><strong>Email:</strong> {{ currentUser.email }}</p>
+    <p><strong>Age:</strong> {{ currentUser.age }}</p>
+  </div>
+</div>

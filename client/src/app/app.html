@@ -1,0 +1,31 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <h2>User CRUD</h2>
+
+    <nav>
+      <a [routerLink]="['/users']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home / All Users
+      </a>
+
+      <a [routerLink]="['/users/get']" routerLinkActive="active">
+        Get User By ID
+      </a>
+
+      <a [routerLink]="['/users/create']" routerLinkActive="active">
+        Create User
+      </a>
+
+      <a [routerLink]="['/users/update']" routerLinkActive="active">
+        Update User
+      </a>
+
+      <a [routerLink]="['/users/delete']" routerLinkActive="active">
+        Delete User
+      </a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

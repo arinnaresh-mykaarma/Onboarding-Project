@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+
+client/node_modules/
+client/dist/
+client/.angular/cache/
+client/coverage/
+
+server/target/
+server/.mvn-home/
+
+*.log

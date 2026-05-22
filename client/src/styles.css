@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+h1, h2, h3 {
+  color: #f8fafc;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+p {
+  color: #cbd5e1;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  margin-right: 8px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+button.secondary {
+  background: #475569;
+}
+
+button.secondary:hover {
+  background: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 16px;
+  border-bottom: 1px solid #1f2937;
+  text-align: left;
+}
+
+th {
+  background: #020617;
+  color: #93c5fd;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #020617;
+  color: #f8fafc;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+.form-card {
+  max-width: 720px;
+}
+
+.result-box {
+  margin-top: 24px;
+  padding: 20px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+}
+
+.error {
+  color: #f87171;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.success {
+  color: #4ade80;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.info {
+  color: #93c5fd;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

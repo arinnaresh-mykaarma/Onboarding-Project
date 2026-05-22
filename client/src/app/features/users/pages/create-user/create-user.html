@@ -1,0 +1,48 @@
+<div class="card form-card">
+  <h2>Create User</h2>
+
+  <form (ngSubmit)="createUser()">
+    <label>Name</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="form.name"
+      placeholder="Enter your name"
+      required
+    >
+
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="form.email"
+      placeholder="Enter your email"
+      required
+    >
+
+    <label>Age</label>
+    <input
+      type="number"
+      name="age"
+      [(ngModel)]="form.age"
+      placeholder="Enter your age"
+      required
+    >
+
+    <button type="submit" [disabled]="isLoading()">
+      <span *ngIf="!isLoading()">Create User</span>
+      <span *ngIf="isLoading()">Processing...</span>
+    </button>
+  </form>
+
+  <p class="success" *ngIf="successMessage()">{{ successMessage() }}</p>
+  <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+
+  <div class="result-box" *ngIf="createdUser() as user">
+    <h3>Created User From Backend</h3>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="card">
+  <h2>All Users</h2>
+  <p>All users are loaded dynamically from the Spring Boot backend.</p>
+
+  <button (click)="loadUsers()" [disabled]="isLoading()">
+    <span *ngIf="!isLoading()">Refresh</span>
+    <span *ngIf="isLoading()">Processing...</span>
+  </button>
+
+  <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+
+  <table *ngIf="users().length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users()">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.age }}</td>
+        <td>
+          <div class="actions">
+            <button type="button" (click)="goToGet(user.id)">View</button>
+            <button type="button" class="secondary" (click)="goToUpdate(user.id)">Update</button>
+            <button type="button" class="danger" (click)="goToDelete(user.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="users().length === 0 && !errorMessage() && !isLoading()">
+    No users found.
+  </p>
+</div>

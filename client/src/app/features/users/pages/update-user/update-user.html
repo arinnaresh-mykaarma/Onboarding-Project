@@ -1,0 +1,56 @@
+<div class="card form-card">
+  <h2>Update User</h2>
+
+  <label>User ID</label>
+  <input type="number" [(ngModel)]="id" placeholder="Enter user ID">
+
+  <button type="button" (click)="loadUser()" [disabled]="isLoadingUser()">
+    <span *ngIf="!isLoadingUser()">Load User</span>
+    <span *ngIf="isLoadingUser()">Processing...</span>
+  </button>
+
+  <form (ngSubmit)="updateUser()">
+    <label>Name</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="form.name"
+      placeholder="Enter updated name"
+      required
+    >
+
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="form.email"
+      placeholder="Enter updated email"
+      required
+    >
+
+    <label>Age</label>
+    <input
+      type="number"
+      name="age"
+      [(ngModel)]="form.age"
+      placeholder="Enter updated age"
+      required
+    >
+
+    <button type="submit" [disabled]="isUpdating()">
+      <span *ngIf="!isUpdating()">Update User</span>
+      <span *ngIf="isUpdating()">Processing...</span>
+    </button>
+  </form>
+
+  <p class="success" *ngIf="successMessage()">{{ successMessage() }}</p>
+  <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+
+  <div class="result-box" *ngIf="updatedUser() as user">
+    <h3>Updated User From Backend</h3>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+  </div>
+</div>

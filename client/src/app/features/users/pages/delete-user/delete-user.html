@@ -1,0 +1,19 @@
+<div class="card form-card">
+  <h2>Delete User</h2>
+
+  <label>User ID</label>
+  <input type="number" [(ngModel)]="id" placeholder="Enter user ID">
+
+  <button class="danger" type="button" (click)="deleteUser()" [disabled]="isLoading()">
+    <span *ngIf="!isLoading()">Delete User</span>
+    <span *ngIf="isLoading()">Processing...</span>
+  </button>
+
+  <p class="success" *ngIf="successMessage()">{{ successMessage() }}</p>
+  <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+
+  <div class="result-box" *ngIf="deletedId() !== null">
+    <h3>Deleted User</h3>
+    <p><strong>ID:</strong> {{ deletedId() }}</p>
+  </div>
+</div>
