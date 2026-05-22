@@ -2,6 +2,8 @@
 
 Full-stack User CRUD application with an Angular frontend and a Spring Boot backend. The app lets users list, create, read, update, and delete user records.
 
+Recording of the full working of the application: [Google Drive Link](https://drive.google.com/file/d/1wbzh-Nk4gWPEDVPWnLj0bjUIlVcOYXav/view?usp=drive_link)
+
 ## Tech Stack
 
 ### Backend
